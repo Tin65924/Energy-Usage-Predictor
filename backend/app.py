@@ -7,6 +7,13 @@ CORS(app)
 
 @app.route("/predict", methods=["POST"])
 def predict():
+    """ SENT DATA SHOULD BE
+        {
+        "Hour": 12,
+        "Temperature": 23.5,
+        "Machine_Status": "Idle"
+        }
+    """
     new_data = request.get_json()
 
     new_predicted = predict_new(new_data)
@@ -15,3 +22,6 @@ def predict():
         return jsonify({"data": None, "message": "Prediction Failed!"})
 
     return jsonify({"data": new_predicted, "message": "Prediction Success!"})
+
+if __name__ == "__main__":
+    app.run()

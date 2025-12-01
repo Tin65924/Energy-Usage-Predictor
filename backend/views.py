@@ -1,8 +1,8 @@
 import joblib
 import pandas as pd
 
-model = joblib.load(r"Energy-Usage-Predictor\backend\energy_model.pkl")
-model_columns = joblib.load(r"Energy-Usage-Predictor\backend\model_columns.pkl")
+model = joblib.load(r"C:\Users\Vincent Darriguez\Desktop\Website\Energy-Usage-Predictor\backend\models\energy_model.pkl")
+model_columns = joblib.load(r"C:\Users\Vincent Darriguez\Desktop\Website\Energy-Usage-Predictor\backend\models\model_columns.pkl")
 
 def predict_new(data):
     """
