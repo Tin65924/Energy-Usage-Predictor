@@ -1,8 +1,16 @@
 import joblib
 import pandas as pd
+from pathlib import Path
 
-model = joblib.load(r"C:\Users\Vincent Darriguez\Desktop\Website\Energy-Usage-Predictor\backend\models\energy_model.pkl")
-model_columns = joblib.load(r"C:\Users\Vincent Darriguez\Desktop\Website\Energy-Usage-Predictor\backend\models\model_columns.pkl")
+models_dir = Path(__file__).resolve().parent / "models"
+model_path = models_dir / "energy_model.pkl"
+model_columns_path = models_dir / "model_columns.pkl"
+
+if not model_path.exists() or not model_columns_path.exists():
+    raise FileNotFoundError(f"Model files not found in {models_dir!s}. Ensure 'energy_model.pkl' and 'model_columns.pkl' are present.")
+
+model = joblib.load(str(model_path))
+model_columns = joblib.load(str(model_columns_path))
 
 def predict_new(data):
     """
