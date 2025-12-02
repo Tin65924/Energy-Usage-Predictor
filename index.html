@@ -27,12 +27,12 @@
           <h2 class="card-title">Input Form</h2>
           <form id="prediction-form">
             <div class="form-group">
-              <label for="predict-date">Date to predict:</label>
+              <label for="predict-hour">Hour to predict:</label>
               <input
-                type="date"
-                id="predict-date"
+                type="number"
+                id="predict-hour"
+                value="0"
                 class="input-text full-width"
-                value="2025-12-04"
               />
             </div>
 
@@ -53,8 +53,8 @@
               <label for="machine-status">Machine Operating Status:</label>
               <select id="machine-status" class="input-text full-width">
                 <option value="idle">Idle</option>
-                <option value="running_light">Running (Light Load)</option>
-                <option value="running_heavy">Running (Heavy Load)</option>
+                <option value="On">On</option>
+                <option value="Off">Off</option>
               </select>
             </div>
 

@@ -1,3 +1,4 @@
+from flask import jsonify
 import joblib
 import pandas as pd
 from pathlib import Path
@@ -32,4 +33,9 @@ def predict_new(data):
 
     X_new = X_new[model_columns]
 
-    return float(model.predict(X_new)[0])
+    predicted = float(model.predict(X_new)[0])
+    current_rate = 13.0127
+
+    cost = current_rate * predicted
+
+    return jsonify({"Predicted": predicted, "Cost": cost})
