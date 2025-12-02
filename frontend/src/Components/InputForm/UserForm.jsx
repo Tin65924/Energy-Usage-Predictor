@@ -52,7 +52,7 @@ function UserForm(){
                             min={-20}
                             max={50}
                             step={0.1}
-                            className={`${style.input-text} ${full-width}`} 
+                            className={`${style.input-text} ${["full-width"]}`} 
                             onChange={(e) => setTemp(e.target.value)}/>
                     </div>
 
@@ -66,9 +66,9 @@ function UserForm(){
 
                         <button type="submit" id='submitBtn' className={style["btn btn-primary"]}>Submit</button>
                         <div className={style["status-message"]} id='status'>
-                            <p>Predicted: {predicted}</p>
-                            <p>Cost: {cost}</p>
-                            <p>Message: {message}</p>
+                            <p>Predicted: {resultPredicted}</p>
+                            <p>Cost: {resultCost}</p>
+                            <p>Message: {resultMessage}</p>
                         </div>
                     </div>
                 </form>
