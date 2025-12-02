@@ -2,7 +2,9 @@ import React, {useState} from 'react';
 import style from './userForm.module.css';
 
 function UserForm(){
-
+    const [resultPredicted, setResultPredicted] = useState("");
+    const [resultCost, setResultCost] = useState("");
+    const [resultMessage, setResultMessage] = useState("");
     const [hour, setHour] = useState("");
     const [temp, setTemp] = useState("");
     const [status, setStatus] = useState("");
@@ -21,25 +23,27 @@ function UserForm(){
         });
 
         const data = await response.json();
-        alert(data.data);
+        alert(data.predicted);
+        alert(data.cost);
+        alert(data.message);
     };
 
     return(
         <div className={style["main-grid"]}>
             <div className={style["card predict-card"]}>
-                <h2 className="card-title">Input Form</h2>
+                <h2 className={style["card-title"]}>Input Form</h2>
                 <form id={handleSubmit}>
-                    <div className="form-group">
+                    <div className={style["form-group"]}>
                         <label htmlFor="predict-hour">Hour to predict:</label>
                         <input 
                             type="number"
                             id='predict-hour'
                             value={hour}
-                            className='input-text full-width'
+                            className={style['input-text full-width']}
                             onChange={(e) => setHour(e.target.value)}
                             placeholder='Hour' />
                     </div>
-                    <div className="form-group">
+                    <div className={style["form-group"]}>
                         <label htmlFor="predict-temperature">Predict Temperature:</label>
                         <input 
                             type="number"
@@ -48,20 +52,20 @@ function UserForm(){
                             min={-20}
                             max={50}
                             step={0.1}
-                            className='input-text full-width' 
+                            className={style['input-text full-width']} 
                             onChange={(e) => setTemp(e.target.value)}/>
                     </div>
 
-                    <div className="form-group">
+                    <div className={style["form-group"]}>
                         <label htmlFor="machine-status">Machine Operating Status:</label>
-                        <select onChange={(e) => setStatus(e.target.value)} name="machine-status" className="input-text full-width">
+                        <select onChange={(e) => setStatus(e.target.value)} name="machine-status" className={style["input-text full-width"]}>
                             <option value="idle">idle</option>
                             <option value="On">On</option>
                             <option value="Off">Off</option>
                         </select>
 
-                        <button type="submit" id='submitBtn' className='btn btn-primary'>Submit</button>
-                        <div className="status-message" id='status'>Enter values and submit.</div>
+                        <button type="submit" id='submitBtn' className={style['btn btn-primary']}>Submit</button>
+                        <div className={style["status-message"]} id='status'>Enter values and submit.</div>
                     </div>
                 </form>
             </div>
