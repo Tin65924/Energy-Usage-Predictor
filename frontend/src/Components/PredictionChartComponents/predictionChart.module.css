@@ -1,0 +1,48 @@
+:root {
+    --color-primary: #1e293b; /* Dark Blue for Header/Text */
+    --color-secondary: #0f172a; /* Deep Blue/Black */
+    --color-background: #f1f5f9; /* Light Gray background */
+    --color-card-bg: #ffffff; /* White card background */
+    --color-accent-orange: #f97316; /* Orange highlight for BIGGEST insight */
+    --color-bar-orange: #f59e0b; /* Orange bar */
+    --color-bar-blue: #3b82f6; /* Blue bar */
+    --color-text-light: #cbd5e1;
+}
+
+/* --- Top Right Card: Forecast Output --- */
+.forecast-card {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.forecast-value-container {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+.forecast-value {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin: 0;
+}
+
+.forecast-value .unit {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    color: var(--color-accent-orange);
+}
+
+.estimated-cost {
+    font-size: 1rem;
+    color: #64748b;
+    margin-top: 0.5rem;
+}

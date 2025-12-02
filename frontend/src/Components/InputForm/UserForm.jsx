@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import style from './userForm.module.css';
 
 function UserForm({setPrediction}) {
-    const [resultPredicted, setResultPredicted] = useState("");
-    const [resultCost, setResultCost] = useState("");
-    const [resultMessage, setResultMessage] = useState("");
     const [hour, setHour] = useState("");
     const [temp, setTemp] = useState("");
     const [status, setStatus] = useState("");
