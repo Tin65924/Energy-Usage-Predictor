@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import style from './userForm.module.css';
 
-function UserForm() {
+function UserForm({setPrediction}) {
     const [resultPredicted, setResultPredicted] = useState("");
     const [resultCost, setResultCost] = useState("");
     const [resultMessage, setResultMessage] = useState("");
@@ -23,9 +23,11 @@ function UserForm() {
         });
 
         const data = await response.json();
-        setResultPredicted(data.predicted);
-        setResultCost(data.cost);
-        setResultMessage(data.message);
+        setPrediction({
+        predicted: data.predicted,
+        cost: data.cost,
+        message: data.message,
+        });
     };
 
     return (
@@ -79,12 +81,6 @@ function UserForm() {
                         >
                             Submit
                         </button>
-
-                        <div className={style["status-message"]} id="status">
-                            <p>Predicted: {resultPredicted}</p>
-                            <p>Cost: {resultCost}</p>
-                            <p>Message: {resultMessage}</p>
-                        </div>
                     </div>
                 </form>
             </div>
