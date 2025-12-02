@@ -1,3 +1,14 @@
+:root {
+    --color-primary: #1e293b; /* Dark Blue for Header/Text */
+    --color-secondary: #0f172a; /* Deep Blue/Black */
+    --color-background: #f1f5f9; /* Light Gray background */
+    --color-card-bg: #ffffff; /* White card background */
+    --color-accent-orange: #f97316; /* Orange highlight for BIGGEST insight */
+    --color-bar-orange: #f59e0b; /* Orange bar */
+    --color-bar-blue: #3b82f6; /* Blue bar */
+    --color-text-light: #cbd5e1;
+}
+
 .main-grid{
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -10,4 +21,51 @@
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.predicted-card{
+    grid-row: 1/3;
+}
+
+.form-group{
+    margin-bottom: 1.25rem;
+}
+
+.form-group label{
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #475569;
+}
+
+.input-text{
+    width: 60px;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 0.95rem;
+    color: #334155;
+}
+
+.input-text.full-width{
+    width: calc(100% - 1.5rem);
+}
+
+.btn{
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
 }

@@ -23,16 +23,16 @@ function UserForm(){
         });
 
         const data = await response.json();
-        alert(data.predicted);
-        alert(data.cost);
-        alert(data.message);
+        setResultPredicted(data.predicted);
+        setResultCost(data.cost);
+        setResultMessage(data.message);
     };
 
     return(
         <div className={style["main-grid"]}>
-            <div className={style["card predict-card"]}>
+            <div className={`${style.card} ${style["predict-card"]}`}>
                 <h2 className={style["card-title"]}>Input Form</h2>
-                <form id={handleSubmit}>
+                <form onSubmit={handleSubmit}>
                     <div className={style["form-group"]}>
                         <label htmlFor="predict-hour">Hour to predict:</label>
                         <input 
@@ -52,20 +52,24 @@ function UserForm(){
                             min={-20}
                             max={50}
                             step={0.1}
-                            className={style['input-text full-width']} 
+                            className={`${style.input-text} ${full-width}`} 
                             onChange={(e) => setTemp(e.target.value)}/>
                     </div>
 
                     <div className={style["form-group"]}>
                         <label htmlFor="machine-status">Machine Operating Status:</label>
                         <select onChange={(e) => setStatus(e.target.value)} name="machine-status" className={style["input-text full-width"]}>
-                            <option value="idle">idle</option>
+                            <option value="Idle">idle</option>
                             <option value="On">On</option>
                             <option value="Off">Off</option>
                         </select>
 
-                        <button type="submit" id='submitBtn' className={style['btn btn-primary']}>Submit</button>
-                        <div className={style["status-message"]} id='status'>Enter values and submit.</div>
+                        <button type="submit" id='submitBtn' className={style["btn btn-primary"]}>Submit</button>
+                        <div className={style["status-message"]} id='status'>
+                            <p>Predicted: {predicted}</p>
+                            <p>Cost: {cost}</p>
+                            <p>Message: {message}</p>
+                        </div>
                     </div>
                 </form>
             </div>
