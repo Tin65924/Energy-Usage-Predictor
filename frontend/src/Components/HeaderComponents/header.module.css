@@ -1,4 +1,38 @@
-h3{
-    font-size: 2rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+:root {
+    --color-primary: #1e293b;
+    --color-secondary: #0f172a;
+    --color-background: #f1f5f9;
+    --color-card-bg: #ffffff;
+    --color-accent-orange: #f97316;
+    --color-bar-orange: #f59e0b;
+    --color-text-light: #cbd5e1;
+}
+
+.header-bar {
+    background-color: var(--color-primary);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-radius: 8px 8px 0 0;
+    margin-top: 2rem;
+}
+
+.header-title{
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.header-date{
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.tagline{
+    font-size: 0.9re;
+    color: #64748b;
+    margin: 0.5rem 0 1.5rem 0;
+    padding-left: 1.5rem;
 }

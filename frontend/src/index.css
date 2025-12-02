@@ -1,12 +1,25 @@
-body{
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: gray;
+:root {
+    --color-primary: #1e293b;
+    --color-secondary: #0f172a;
+    --color-background: #f1f5f9;
+    --color-card-bg: #ffffff;
+    --color-accent-orange: #f97316;
+    --color-bar-orange: #f59e0b;
+    --color-text-light: #cbd5e1;
 }
 
-header{
-    background-color: aliceblue;
-    text-align: center;
-    padding: 5px;
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    line-height: 1.5;
+}
+
+.app-wrapper{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem 2rem 1.5rem;
 }

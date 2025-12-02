@@ -4,11 +4,12 @@ import PredictionChart from "./Components/PredictionChartComponents/PredictionCh
 function App() {
 
   return (
-    <>
-    <Header />
-    <UserForm />
-    <PredictionChart />
-    </>
+    <div className="app-wrapper">
+      <Header />
+      <UserForm />
+      <PredictionChart />
+    </div>
+    
   )
 }
 

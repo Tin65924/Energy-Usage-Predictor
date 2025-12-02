@@ -25,30 +25,71 @@ function UserForm(){
     };
 
     return(
-        <div className={style.formContainer}>
-            <h2>Input Form</h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="date">
-                    Date to predict:
-                    <input value={hour} onChange={(e) => setHour(e.target.value)} type="number" name="" id="Hours" placeholder='Hours'/>
-                </label><br />
-                <label htmlFor="temperature">
-                    Temperature:
-                    <input value={temp} onChange={(e) => setTemp(e.target.value)} type="number" name="" id="temperature" placeholder='Temperature'/>
-                </label><br />
-                <label htmlFor="status">
-                    Machine Operating Status:
-                    <select value={status} onChange={(e) => setStatus(e.target.value)} name="status" id="status">
-                        <option value="">--Select Operating Status--</option>
-                        <option value="On">On</option>
-                        <option value="Off">Off</option>
-                        <option value="Idle">Idle</option>
-                    </select>
-                </label>
-                <button type='submit'>Submit</button>
-            </form>
+        <div className={style["main-grid"]}>
+            <div className={style["card predict-card"]}>
+                <h2 className="card-title">Input Form</h2>
+                <form id={handleSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="predict-hour">Hour to predict:</label>
+                        <input 
+                            type="number"
+                            id='predict-hour'
+                            value={hour}
+                            className='input-text full-width'
+                            onChange={(e) => setHour(e.target.value)}
+                            placeholder='Hour' />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="predict-temperature">Predict Temperature:</label>
+                        <input 
+                            type="number"
+                            id='predict-temperature'
+                            value={temp}
+                            min={-20}
+                            max={50}
+                            step={0.1}
+                            className='input-text full-width' 
+                            onChange={(e) => setTemp(e.target.value)}/>
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="machine-status">Machine Operating Status:</label>
+                        <select onChange={(e) => setStatus(e.target.value)} name="machine-status" className="input-text full-width">
+                            <option value="idle">idle</option>
+                            <option value="On">On</option>
+                            <option value="Off">Off</option>
+                        </select>
+
+                        <button type="submit" id='submitBtn' className='btn btn-primary'>Submit</button>
+                        <div className="status-message" id='status'>Enter values and submit.</div>
+                    </div>
+                </form>
+            </div>
         </div>
     )
 }
 
 export default UserForm
+
+
+            // <h2>Input Form</h2>
+            // <form onSubmit={handleSubmit}>
+            //     <label htmlFor="date">
+            //         Date to predict:
+            //         <input value={hour} onChange={(e) => setHour(e.target.value)} type="number" name="" id="Hours" placeholder='Hours'/>
+            //     </label><br />
+            //     <label htmlFor="temperature">
+            //         Temperature:
+            //         <input value={temp} onChange={(e) => setTemp(e.target.value)} type="number" name="" id="temperature" placeholder='Temperature'/>
+            //     </label><br />
+            //     <label htmlFor="status">
+            //         Machine Operating Status:
+            //         <select value={status} onChange={(e) => setStatus(e.target.value)} name="status" id="status">
+            //             <option value="">--Select Operating Status--</option>
+            //             <option value="On">On</option>
+            //             <option value="Off">Off</option>
+            //             <option value="Idle">Idle</option>
+            //         </select>
+            //     </label>
+            //     <button type='submit'>Submit</button>
+            // </form>
